@@ -1,0 +1,86 @@
+/*sección de nuestros servicios*/
+
+.main-servicios {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    margin: auto;
+        &.main-servicios figure {
+            position: relative;
+            height: 270px;
+            width: 350px;
+            overflow: hidden;
+            border-radius: 1px;
+            padding: $espacio-Xchico;
+                &.main-servicios figure img {
+                    width: 100%;
+                    height: 100%;
+                    transition: all 500ms ease-out;
+                }
+        }
+}
+
+
+/*Esto es el hover de la imagen, donde se leerá el párrafo junto al título, tendrá los márgenes para empujar el texto hacia arriba y abajo y las alineaciones y centrado.*/
+
+.main-servicios figure .capa {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(234, 170, 0, 0.8);
+    transition: all 500ms ease-out;
+    opacity: 0;
+    visibility: hidden;
+    text-align: center;
+    font-size: $fuente-chica;
+        h3 {
+            margin-bottom: 120px;
+            transition: all 500ms ease-out;
+            margin-top: 30px;
+                p {
+                    width: 100%;
+                    max-width: 220px;
+                    margin: auto;
+                    
+                }
+        }
+}
+
+/*Esta es la activación del hover de la imagen de arriba, además es el márgen que tendrá el h3 con el párrafo*/
+
+.main-servicios figure:hover > .capa {
+    opacity: 1;
+    visibility: visible;
+        h3 {
+            margin-top: 70px;
+            margin-bottom: 15px;
+        }
+}
+
+/*Responsivo para la grid de nuestros servicios*/
+@media (min-width: 768px) {
+    .main-servicios {
+        @include repeat-2-1
+    }
+}
+
+@media (max-width: 767px) {
+    .main-servicios {
+        @include repeat-1-1
+    }
+}
+
+@media (max-width: 767px) {
+    .main-servicios figure {
+        width: 300px;
+        height: 220px;
+    }
+}
+
+@media (max-width: 528px) {
+    .main-servicios img {
+        width: 280px;
+        text-align: center;
+    }
+}

@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html { 
+    font-size: 62.5%;
+}
+
+
+h1 {
+    text-align: center;
+    padding: $espacio-grande;
+    font-size: $fuente-grande;
+    color: $color-primario;
+}
+
+body { 
+    $font-family: 'Urbanist', sans-serif;
+    background-color: $color-terciario;
+}
+
+header{
+    background-color: $color-primario;
+}
+
+iframe {
+    max-width: 100%;
+}
+
+/*Navegador*/
+
+.navbar-toggler-icon {
+    background: url('https://api.iconify.design/charm/menu-hamburger.svg?color=%23eaaa00') no-repeat center center / contain;
+}
+
+.nav-link,
+.nav-brand {
+    color: $color-secundario;
+    font-size: $fuente-media;
+    &:hover {
+        color: $color-terciario;
+    }
+}
+
+
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+    color: $color-terciario;
+}
+
+/*footer*/
+.copy{
+    font-size: $fuente-chica;
+    padding: $espacio-chico;
+    text-align: center;
+    color: $color-primario;
+}
+
+/*parrafos generales*/
+.parrafos { 
+    font-weight: 400;
+    font-size: $fuente-media;
+    color: $color-primario;
+    padding: $espacio-medio;
+}
+
+/*Adaptación del carrusel en el header*/
+@media (min-width: $desktopXG) {
+    #carouselExampleControlsNoTouching {
+        margin: 0 auto;
+        width: 100vh;
+    }
+    .carousel-item img {
+        height: 500px;
+    }
+}

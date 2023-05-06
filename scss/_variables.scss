@@ -1,0 +1,53 @@
+/*Paleta de colores*/
+
+$color-primario: #10101F;
+$color-secundario: #EAAA00;
+$color-terciario: #FCF7E1;
+
+/*Tamaños de fuentes e iconos*/
+
+$fuente-chica: 1.5rem;
+$fuente-media: 2rem;
+$fuente-grande: 2.5rem;
+
+/*Resoluciones de pantallas*/
+
+$tablet: 768px;
+$desktop: 992px;
+$desktopXG: 1200px;
+
+
+/*Separaciones (margenes y paddings)*/
+
+$espacio-Xchico: 0.5rem;
+$espacio-chico: 1.5rem;
+$espacio-medio: 2rem;
+$espacio-grande: 3rem;
+
+
+/*Fuente*/
+
+$fuente-principal: 'Urbanist', sans-serif;
+
+
+/*MIXINS*/
+
+/*BOLSITAS DE CODIGO*/
+
+@mixin repeat-1-1 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+}
+
+@mixin repeat-2-1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+}
+
+@mixin repeat-3-1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+}

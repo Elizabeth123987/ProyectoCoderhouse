@@ -1,0 +1,37 @@
+/*sección de recetarios*/
+.catalogos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.card {
+    text-align: center;
+    margin: 0 auto;
+    .card-img-top {
+        height: 200px;
+        width: 218px;
+    }
+}
+
+
+.btn-primary {
+    color: $color-terciario;
+    background-color: $color-primario;
+    border: $color-primario;
+    --bs-btn-hover-bg: #EAAA00;
+}
+
+/*Adaptación responsiva de las cards de recetarios.*/
+@media (min-width: $tablet) {
+    .catalogos {
+        @include repeat-2-1
+    }
+}
+
+@media (min-width: $desktop) {
+    .catalogos {
+        @include repeat-3-1
+    }
+}

@@ -1,0 +1,24 @@
+/*sección de inicio*/
+.img-inicio {
+    width: 250px;
+    height: 250px;
+    padding: $espacio-medio;
+    text-align: center;
+}
+
+.centrado-inicio {
+    text-align: center;
+}
+
+.video1{
+    padding: $espacio-medio;
+    text-align: center;
+}
+
+/*adaptación responsiva de las imágenes del inicio*/
+@media (max-width: $desktopXG) {
+    .img-inicio {
+        width: 159px;
+        height: 150px;
+    }
+}

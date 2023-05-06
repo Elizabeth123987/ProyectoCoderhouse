@@ -1,135 +1,259 @@
+@charset "UTF-8";
+/*Paleta de colores*/
+/*Tamaños de fuentes e iconos*/
+/*Resoluciones de pantallas*/
+/*Separaciones (margenes y paddings)*/
+/*Fuente*/
+/*MIXINS*/
+/*BOLSITAS DE CODIGO*/
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
-header{
-    background-color: #10101F;
-}
-
-html { 
-    font-size: 62.5%;
-}
-
-body { 
-    font-family: 'Urbanist', sans-serif;
-    background-color: #FCF7E1;
+html {
+  font-size: 62.5%;
 }
 
 h1 {
-    text-align: center;
-    padding: 2rem;
-    font-size: 2.5rem;
-    color: #10101F;
+  text-align: center;
+  padding: 3rem;
+  font-size: 2.5rem;
+  color: #10101F;
 }
 
+body {
+  background-color: #FCF7E1;
+}
+
+header {
+  background-color: #10101F;
+}
+
+iframe {
+  max-width: 100%;
+}
+
+/*Navegador*/
 .navbar-toggler-icon {
-    background: url('https://api.iconify.design/charm/menu-hamburger.svg?color=%23eaaa00') no-repeat center center / contain;
+  background: url("https://api.iconify.design/charm/menu-hamburger.svg?color=%23eaaa00") no-repeat center center/contain;
 }
 
-.nav-link {
-    color: #EAAA00;
-    font-size: 2rem;
+.nav-link,
+.nav-brand {
+  color: #EAAA00;
+  font-size: 2rem;
+}
+.nav-link:hover,
+.nav-brand:hover {
+  color: #FCF7E1;
 }
 
 .navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
-    color: #FCF7E1;
+  color: #FCF7E1;
 }
 
-.navbar-nav {
-    --bs-nav-link-hover-color: #FCF7E1;
+/*footer*/
+.copy {
+  font-size: 1.5rem;
+  padding: 1.5rem;
+  text-align: center;
+  color: #10101F;
 }
 
-.navbar-brand {
-    color: #EAAA00;
+/*parrafos generales*/
+.parrafos {
+  font-weight: 400;
+  font-size: 2rem;
+  color: #10101F;
+  padding: 2rem;
 }
 
-.parrafos { 
-    font-weight: 400;
-    font-size: 2rem;
-    color: #10101F;
-    padding: 2rem;
-}
-
-.h2centrado{
-    font-weight: 600;
-    text-align: center;
-    font-size: 2.5rem;
-}
-
-
-.img-inicio {
-    width: 250px;
-    height: 250px;
-    padding: 2rem;
+/*Adaptación del carrusel en el header*/
+@media (min-width: 1200px) {
+  #carouselExampleControlsNoTouching {
     margin: 0 auto;
+    width: 100vh;
+  }
+  .carousel-item img {
+    height: 500px;
+  }
+}
+/*sección de inicio*/
+.img-inicio {
+  width: 250px;
+  height: 250px;
+  padding: 2rem;
+  text-align: center;
 }
 
-.map {
-    padding: 2rem;
-    margin: 0.5rem;
-    text-align: center;
-}
-.formulario {
-    padding: 3rem;
-    margin: 0.5rem;
-    font-size: 2rem;
-    text-align:center;
-}
-.video1{
-    padding: 2rem;
-    text-align: center;
+.centrado-inicio {
+  text-align: center;
 }
 
-.copy{
-    font-size: 1.5rem;
-    padding: 1.5rem;
-    text-align: center;
-    color: #10101F;
+.video1 {
+  padding: 2rem;
+  text-align: center;
 }
 
-@media (min-width: 1380px) {
-    #carouselExampleControlsNoTouching {
-        margin: 0 auto;
-        width: 70%;
-    }
-    .carousel-item img {
-        height: 500px;
-    }
+/*adaptación responsiva de las imágenes del inicio*/
+@media (max-width: 1200px) {
+  .img-inicio {
+    width: 159px;
+    height: 150px;
+  }
+}
+/*carrusel de quienes somos*/
+.h5, h5 {
+  font-size: 2rem;
 }
 
-.catalogos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+.carousel-caption {
+  color: #10101F;
+  font-size: 1.5rem;
 }
 
+/*sección de nuestros servicios*/
+.main-servicios {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  margin: auto;
+}
+.main-servicios.main-servicios figure {
+  position: relative;
+  height: 270px;
+  width: 350px;
+  overflow: hidden;
+  border-radius: 1px;
+  padding: 0.5rem;
+}
+.main-servicios.main-servicios figure.main-servicios figure img {
+  width: 100%;
+  height: 100%;
+  transition: all 500ms ease-out;
+}
+
+/*Esto es el hover de la imagen, donde se leerá el párrafo junto al título, tendrá los márgenes para empujar el texto hacia arriba y abajo y las alineaciones y centrado.*/
+.main-servicios figure .capa {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(234, 170, 0, 0.8);
+  transition: all 500ms ease-out;
+  opacity: 0;
+  visibility: hidden;
+  text-align: center;
+  font-size: 1.5rem;
+}
+.main-servicios figure .capa h3 {
+  margin-bottom: 120px;
+  transition: all 500ms ease-out;
+  margin-top: 30px;
+}
+.main-servicios figure .capa h3 p {
+  width: 100%;
+  max-width: 220px;
+  margin: auto;
+}
+
+/*Esta es la activación del hover de la imagen de arriba, además es el márgen que tendrá el h3 con el párrafo*/
+.main-servicios figure:hover > .capa {
+  opacity: 1;
+  visibility: visible;
+}
+.main-servicios figure:hover > .capa h3 {
+  margin-top: 70px;
+  margin-bottom: 15px;
+}
+
+/*Responsivo para la grid de nuestros servicios*/
 @media (min-width: 768px) {
-    .catalogos {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .main-servicios {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
 }
-
-@media (min-width: 992px) {
-    .catalogos {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-    }
+@media (max-width: 767px) {
+  .main-servicios {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+  }
+}
+@media (max-width: 767px) {
+  .main-servicios figure {
+    width: 300px;
+    height: 220px;
+  }
+}
+@media (max-width: 528px) {
+  .main-servicios img {
+    width: 280px;
+    text-align: center;
+  }
+}
+/*sección de recetarios*/
+.catalogos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 .card {
-    text-align: center;
-    margin: 0 auto;
+  text-align: center;
+  margin: 0 auto;
+}
+.card .card-img-top {
+  height: 200px;
+  width: 218px;
 }
 
-.card-img-top {
-    height: 200px;
-    width: 218px;
+.btn-primary {
+  color: #FCF7E1;
+  background-color: #10101F;
+  border: #10101F;
+  --bs-btn-hover-bg: #EAAA00;
 }
-.main-servicios img {
-    width: 500px;
-    margin: 10px;
-    padding: 10px;
+
+/*Adaptación responsiva de las cards de recetarios.*/
+@media (min-width: 768px) {
+  .catalogos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
 }
+@media (min-width: 992px) {
+  .catalogos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+  }
+}
+/*sección de contactanos*/
+.contactanos__titulo {
+  font-weight: 600;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.map {
+  text-align: center;
+}
+
+.form-label {
+  font-size: 1.5rem;
+}
+
+.formulario {
+  padding: 3rem;
+  margin: 0.5rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+/*# sourceMappingURL=styles.css.map */
