@@ -191,7 +191,8 @@ iframe {
 }
 @media (max-width: 528px) {
   .main-servicios img {
-    width: 280px;
+    width: 350px;
+    height: 270px;
     text-align: center;
   }
 }
